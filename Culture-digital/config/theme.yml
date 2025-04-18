@@ -1,13 +1,36 @@
-name: Culture-digital
+name: culture-digital
 display_name: Culture Digital
+version: 1.0.0
+author:
+  name: baissa
+  email: baissaabdelghani@gmail.com
+
 assets:
-  css:
-    all:
-      - assets/css/theme.css
-  js:
-    all:
-      - assets/js/theme.js
+  use_parent_assets: false
+
+meta:
+  compatibility:
+    from: 1.7.8.0
+    to: 1.7.8.99
+
 global_settings:
-  layout:
-    default:
-      - layout-full-width
+  configuration:
+    PS_DISPLAY_SUPPLIERS: false
+    PS_DISPLAY_MANUFACTURERS: false
+
+dependencies: []
+
+theme_settings:
+  default_layout: layout-both-columns
+  layouts:
+    category: layout-both-columns
+    product: layout-both-columns
+    cms: layout-both-columns
+    index: layout-both-columns
+    prices-drop: layout-both-columns
+    best-sales: layout-both-columns
+    new-products: layout-both-columns
+    manufacturer: layout-both-columns
+    supplier: layout-both-columns
+
+modules: []
