@@ -1,0 +1,13 @@
+name: Culture-digital
+display_name: Culture Digital
+assets:
+  css:
+    all:
+      - assets/css/theme.css
+  js:
+    all:
+      - assets/js/theme.js
+global_settings:
+  layout:
+    default:
+      - layout-full-width
