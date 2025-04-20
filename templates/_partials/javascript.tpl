@@ -22,12 +22,20 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{foreach $stylesheets.external as $stylesheet}
-  <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}">
+{foreach $javascript.external as $js}
+  <script type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
 {/foreach}
 
-{foreach $stylesheets.inline as $stylesheet}
-  <style>
-    {$stylesheet.content}
-  </style>
+{foreach $javascript.inline as $js}
+  <script type="text/javascript">
+    {$js.content nofilter}
+  </script>
 {/foreach}
+
+{if isset($vars) && $vars|@count}
+  <script type="text/javascript">
+    {foreach from=$vars key=var_name item=var_value}
+    var {$var_name} = {$var_value|json_encode nofilter};
+    {/foreach}
+  </script>
+{/if}

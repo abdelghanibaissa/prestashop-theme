@@ -1,0 +1,143 @@
+/* Login Section */
+.login-section {
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .login-title {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    outline: none;
+  }
+  
+  .password-input {
+    position: relative;
+  }
+  
+  .show-password {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7f8c8d;
+  }
+  
+  /* Form Footer */
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me input {
+    margin-left: 0.5rem;
+  }
+  
+  .forgot-password {
+    color: #4361ee;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #3a56d4;
+  }
+  
+  /* No Account */
+  .no-account {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #7f8c8d;
+  }
+  
+  .no-account a {
+    color: #4361ee;
+    text-decoration: none;
+    margin-right: 0.25rem;
+  }
+  
+  .no-account a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 576px) {
+    .login-container {
+      padding: 1.5rem;
+    }
+    
+    .form-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }

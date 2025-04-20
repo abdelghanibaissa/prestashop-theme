@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{$language.iso_code}">
 <head>
@@ -7,279 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{$urls.theme_assets}css/custom.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #4361ee;
-      --secondary-color: #3f37c9;
-      --accent-color: #4cc9f0;
-      --light-color: #f8f9fa;
-      --dark-color: #212529;
-      --gray-color: #6c757d;
-      --success-color: #4bb543;
-      --danger-color: #ff3333;
-      --border-radius: 8px;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-color);
-      background-color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Header Styles */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    
-    .logo {
-      text-decoration: none;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .logo:hover {
-      color: var(--secondary-color);
-    }
-    
-    /* Navigation */
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    
-    nav a {
-      text-decoration: none;
-      color: var(--dark-color);
-      font-weight: 500;
-      padding: 0.5rem 0;
-      position: relative;
-      transition: var(--transition);
-    }
-    
-    nav a:hover {
-      color: var(--primary-color);
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--primary-color);
-      transition: var(--transition);
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    /* Account Dropdown */
-    .account-dropdown {
-      position: relative;
-    }
-    
-    #auth-toggle {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      color: var(--dark-color);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-    
-    #auth-toggle:hover {
-      background-color: rgba(67, 97, 238, 0.1);
-      color: var(--primary-color);
-    }
-    
-    #auth-menu {
-      display: none;
-      position: absolute;
-      top: 3rem;
-      right: 0;
-      background: white;
-      border: 1px solid #eee;
-      border-radius: var(--border-radius);
-      padding: 0.5rem 0;
-      box-shadow: var(--box-shadow);
-      min-width: 180px;
-      z-index: 100;
-    }
-    
-    #auth-menu a {
-      display: block;
-      padding: 0.7rem 1.5rem;
-      color: var(--dark-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    #auth-menu a:hover {
-      background-color: rgba(67, 97, 238, 0.1);
-      color: var(--primary-color);
-      padding-left: 1.7rem;
-    }
-    
-    /* Main Content */
-    main {
-      flex: 1;
-      padding: 3rem 5%;
-      background-color: var(--light-color);
-    }
-    
-    .hero {
-      text-align: center;
-      padding: 4rem 0;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: var(--border-radius);
-      margin-bottom: 3rem;
-    }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--gray-color);
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .btn:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Footer */
-    footer {
-      padding: 2rem 5%;
-      text-align: center;
-      color: var(--gray-color);
-      background-color: white;
-      border-top: 1px solid #eee;
-    }
-    
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .footer-section {
-      flex: 1;
-      min-width: 200px;
-      text-align: left;
-    }
-    
-    .footer-section h3 {
-      color: var(--dark-color);
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-    }
-    
-    .footer-section ul {
-      list-style: none;
-    }
-    
-    .footer-section ul li {
-      margin-bottom: 0.8rem;
-    }
-    
-    .footer-section a {
-      color: var(--gray-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .footer-section a:hover {
-      color: var(--primary-color);
-      padding-left: 5px;
-    }
-    
-    .copyright {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #eee;
-      font-size: 0.9rem;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-      }
-      
-      nav ul {
-        gap: 1rem;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .footer-content {
-        flex-direction: column;
-      }
-      
-      .footer-section {
-        text-align: center;
-      }
-    }
-  </style>
+  
 </head>
 <body>
 
@@ -302,12 +31,13 @@
       <li><a href="{$link->getCategoryLink(3)}">Clothes</a></li>
       <li><a href="{$link->getCategoryLink(4)}">Accessories</a></li>
       <li><a href="{$link->getCategoryLink(5)}">Art</a></li>
-      <li><a href="{$link->getPageLink('contact')}">Contact</a></li>
+     <li><a href="{$link->getPageLink('contact', true)}">Contact </a></li>
+
     </ul>
   </nav>
 
   <!-- Account Dropdown -->
-  <div class="account-dropdown">
+<div class="account-dropdown">
     <button id="auth-toggle">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -336,7 +66,8 @@
           Log out
         </a>
       {else}
-        <a href="{$urls.pages.authentication}">
+        <!-- Login link (points to authentication.tpl) -->
+        <a href="{$urls.base_url}login">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10 17L15 12L10 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -344,7 +75,9 @@
           </svg>
           Login
         </a>
-        <a href="{$urls.pages.authentication}?create_account=1">
+
+        <!-- Sign Up link (points to registration.tpl) -->
+        <a href="{$urls.base_url}registration">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -355,11 +88,10 @@
         </a>
       {/if}
     </div>
-  </div>
+</div>
 
 </header>
 
-<!-- Main Content -->
 <main>
   <section class="hero">
     <h1>Welcome to MyShop!</h1>
@@ -410,7 +142,7 @@
       </div>
     </div>
   </section>
-</main>
+</main> 
 
 <!-- Footer -->
 <footer>
