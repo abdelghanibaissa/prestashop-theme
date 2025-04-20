@@ -1,5 +1,5 @@
-{extends file='page.tpl'}
+{extends file='template.tpl'}
 
-{block name='page_content'}
-<!-- Blank homepage -->
+{block name='content'}
+  <h1>Hello from category page!</h1>
 {/block}

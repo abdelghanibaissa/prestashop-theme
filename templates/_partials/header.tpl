@@ -1,17 +1,10 @@
 <header id="header">
-  <div class="header-top">
-    {hook h='displayNav1'}
-  </div>
-
-  <div class="header-middle">
-    <div class="container">
-      {hook h='displayNav2'}
-    </div>
-  </div>
-
-  <div class="header-bottom">
-    <div class="container">
-      {hook h='displayNavFullWidth'}
-    </div>
+  <div class="container">
+    <a href="{$urls.base_url}">
+      <img src="{$shop.logo}" alt="{$shop.name}" class="logo">
+    </a>
+    {hook h='displayTop'}
+    {hook h='displayNav'}
+    {hook h='displaySearch'}
   </div>
 </header>

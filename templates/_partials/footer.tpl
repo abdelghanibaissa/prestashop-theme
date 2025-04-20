@@ -1,7 +1,6 @@
 <footer id="footer">
-  <div class="footer-container">
-    <div class="container">
-      {hook h='displayFooter'}
-    </div>
+  <div class="container">
+    <p>&copy; {date('Y')} {$shop.name}. Tous droits réservés.</p>
+    {hook h='displayFooter'}
   </div>
 </footer>
