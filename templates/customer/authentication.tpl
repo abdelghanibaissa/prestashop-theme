@@ -5,9 +5,7 @@
 </head>
 <body>
   <!-- Header (Same as your existing header) -->
-  <header>
-    ...
-  </header>
+
 
   <!-- Main Content -->
   <main class="auth-container">
@@ -47,23 +45,22 @@
             <span class="checkmark"></span>
             Remember me
           </label>
-          <a href="{$urls.pages.password}" class="forgot-password">Forgot Password?</a>
+            <a href="{$urls.pages.newpassword}">{l s='Forget password?' d='Shop.Theme.Customeraccount'}</a>
         </div>
 
         <button type="submit" class="auth-button">Sign In</button>
 
-        <div class="auth-alt">
-          <span>Don't have an account?</span>
-          <a href="{$urls.base_url}registration">Create Account</a>
-        </div>
+       <div class="auth-alt">
+  <span>{l s="Don't have an account?" d='Shop.Theme.Customeraccount'}</span>
+  <a href="{$urls.pages.registration}">{l s='Create Account' d='Shop.Theme.Customeraccount'}</a>
+</div>  
+
       </form>
     </div>
   </main>
 
   <!-- Footer (Same as your existing footer) -->
-  <footer>
-    ...
-  </footer>
+ 
 
   <!-- Add this CSS -->
   <style>

@@ -1,405 +1,269 @@
 <!DOCTYPE html>
-<html lang="{$language.iso_code}">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>{l s='Contact Us' d='Shop.Theme'} - {$shop.name}</title>
-  <meta name="description" content="{l s='Get in touch with our team' d='Shop.Theme'}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f5f5f5;
-    }
-    
-    /* Header */
-    header {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #4361ee;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-    
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    
-    /* Main Content */
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    
-    .page-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .page-header h1 {
-      font-size: 2.5rem;
-      color: #4361ee;
-      margin-bottom: 1rem;
-    }
-    
-    /* Contact Container */
-    .contact-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    /* Contact Info */
-    .contact-info {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
-    
-    .contact-info h2 {
-      color: #4361ee;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-    
-    .contact-method {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      align-items: flex-start;
-    }
-    
-    .contact-icon {
-      width: 40px;
-      height: 40px;
-      background-color: rgba(67,97,238,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    
-    .contact-icon svg {
-      width: 20px;
-      height: 20px;
-      color: #4361ee;
-    }
-    
-    .contact-details h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-    }
-    
-    .contact-details p, 
-    .contact-details a {
-      color: #6c757d;
-      text-decoration: none;
-    }
-    
-    .contact-details a:hover {
-      color: #4361ee;
-    }
-    
-    /* Contact Form */
-    .contact-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
-    
-    .contact-form h2 {
-      color: #4361ee;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-    
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    
-    .form-control:focus {
-      outline: none;
-      border-color: #4361ee;
-      box-shadow: 0 0 0 3px rgba(67,97,238,0.2);
-    }
-    
-    textarea.form-control {
-      min-height: 150px;
-      resize: vertical;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      background-color: #4361ee;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    
-    .btn:hover {
-      background-color: #3a56d4;
-    }
-    
-    /* Map */
-    .map-container {
-      margin-top: 3rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
-    
-    .map-container iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-    }
-    
-    /* Footer */
-    footer {
-      padding: 2rem;
-      text-align: center;
-      color: #777;
-      background-color: white;
-      border-top: 1px solid #eee;
-      margin-top: 3rem;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      nav ul {
-        gap: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        :root {
+            --primary-color: #2F3C7E;
+            --accent-color: #FBEAEB;
+            --text-color: #333;
+            --gray-color: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .contact-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            color: var(--gray-color);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .contact-form label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact-info {
+            background: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .map-container {
+            grid-column: 1 / -1;
+            height: 300px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .auth-button:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .map-container {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <main class="contact-container">
+        <div class="contact-card">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you!</p>
+            </div>
 
-<!-- Header -->
-<header>
-  <div>
-    <a href="{$urls.base_url}" class="logo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 11L12 2L21 11V22H14V16H10V22H3V11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      {$shop.name}
-    </a>
-  </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Your Name
+                    </label>
+                    <input type="text" id="name" required>
+                </div>
 
-  <nav>
-    <ul>
-      <li><a href="{$link->getCategoryLink(3)}">Clothes</a></li>
-      <li><a href="{$link->getCategoryLink(4)}">Accessories</a></li>
-      <li><a href="{$link->getCategoryLink(5)}">Art</a></li>
-      <li><a href="{$link->getPageLink('contact', true)}">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+                <div class="form-group">
+                    <label for="email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Email Address
+                    </label>
+                    <input type="email" id="email" required>
+                </div>
 
-<!-- Main Content -->
-<main>
-  <div class="page-header">
-    <h1>{l s='Contact Us' d='Shop.Theme'}</h1>
-    <p>{l s='We\'d love to hear from you' d='Shop.Theme'}</p>
-  </div>
+                <div class="form-group">
+                    <label for="subject">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Subject
+                    </label>
+                    <input type="text" id="subject" required>
+                </div>
 
-  <div class="contact-container">
-    <div class="contact-info">
-      <h2>{l s='Our Contact Information' d='Shop.Theme'}</h2>
-      
-      {if $contact_infos.phone}
-        <div class="contact-method">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 16.92V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H4C3.46957 21 2.96086 20.7893 2.58579 20.4142C2.21071 20.0391 2 19.5304 2 19V16.92M22 16.92C21.6744 15.6184 20.8278 14.4705 19.6389 13.7319C18.45 12.9933 16.9979 12.7198 15.5858 12.9697L14.828 13.1213C13.6745 13.3328 12.4932 13.1707 11.4285 12.6576C10.3638 12.1446 9.47071 11.3064 8.87868 10.2574L8.58579 9.75736C7.84066 8.45472 7.58717 6.92955 7.86863 5.46218C8.15009 3.99481 8.94799 2.68156 10.1213 1.75736L11 1L12.4142 2.41421C12.7893 2.78929 13 3.29799 13 3.82843V6.5C13 7.88071 14.1193 9 15.5 9H17.1716C17.702 9 18.2107 9.21071 18.5858 9.58579L20 11H20.5858C21.4767 11 21.8518 12.0771 21.1844 12.5858L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h3>{l s='Phone' d='Shop.Theme'}</h3>
-            <p><a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a></p>
-            {if $contact_infos.fax}
-              <p><a href="tel:{$contact_infos.fax}">{$contact_infos.fax} {l s='(Fax)' d='Shop.Theme'}</a></p>
-            {/if}
-          </div>
+                <div class="form-group">
+                    <label for="message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Message
+                    </label>
+                    <textarea id="message" required></textarea>
+                </div>
+
+                <button type="submit" class="auth-button">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" fill="currentColor"/>
+                        </svg>
+                        Visit Us
+                    </h3>
+                    <p>123 Business Street<br>New York, NY 10001<br>United States</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92V19C22 19.7956 21.6839 20.5587 21.1213 21.1213C20.5587 21.6839 19.7956 22 19 22H17C12.0294 22 8 17.9706 8 13V5C8 4.20435 8.31607 3.44129 8.87868 2.87868C9.44129 2.31607 10.2044 2 11 2H14" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 4L18 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M19 2L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Call Us
+                    </h3>
+                    <p>+1 (555) 123-4567<br>Mon-Fri: 9am - 5pm EST</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Email Us
+                    </h3>
+                    <p>support@company.com<br>sales@company.com</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6175392590714!2d-73.9878530845939!3d40.748440479327756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1623256789015!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+            </div>
         </div>
-      {/if}
+    </main>
 
-      {if $contact_infos.email}
-        <div class="contact-method">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h3>{l s='Email' d='Shop.Theme'}</h3>
-            <p><a href="mailto:{$contact_infos.email}">{$contact_infos.email}</a></p>
-          </div>
-        </div>
-      {/if}
-
-      {if $contact_infos.address.formatted}
-        <div class="contact-method">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h3>{l s='Address' d='Shop.Theme'}</h3>
-            <address>{$contact_infos.address.formatted nofilter}</address>
-          </div>
-        </div>
-      {/if}
-    </div>
-
-    <div class="contact-form">
-      <h2>{l s='Send Us a Message' d='Shop.Theme'}</h2>
-      
-      {if $notifications}
-        <div class="alert {if $notifications.nw_error}alert-danger{else}alert-success{/if}">
-          {$notifications.success}
-          {$notifications.error}
-        </div>
-      {/if}
-      
-      <form action="{$urls.pages.contact}" method="post" {if $contact.allow_file_upload}enctype="multipart/form-data"{/if}>
-        <div class="form-group">
-          <label for="contact-name">{l s='Your name' d='Shop.Forms.Labels'}</label>
-          <input type="text" id="contact-name" name="name" class="form-control" value="{if $customer.is_logged}{$customer.firstname} {$customer.lastname}{/if}" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="contact-email">{l s='Email address' d='Shop.Forms.Labels'}</label>
-          <input type="email" id="contact-email" name="from" class="form-control" value="{if $customer.is_logged}{$customer.email}{/if}" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="contact-subject">{l s='Subject' d='Shop.Forms.Labels'}</label>
-          <select id="contact-subject" name="id_contact" class="form-control" required>
-            <option value="">{l s='-- Please choose --' d='Shop.Forms.Labels'}</option>
-            {foreach from=$contact.contacts item=contact_elt}
-              <option value="{$contact_elt.id_contact}" {if $id_contact == $contact_elt.id_contact}selected{/if}>{$contact_elt.name}</option>
-            {/foreach}
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="contact-message">{l s='Message' d='Shop.Forms.Labels'}</label>
-          <textarea id="contact-message" name="message" class="form-control" required>{if $contact.message}{$contact.message}{/if}</textarea>
-        </div>
-        
-        {if $contact.allow_file_upload}
-          <div class="form-group">
-            <label for="contact-file">{l s='Attachment' d='Shop.Forms.Labels'}</label>
-            <input type="file" id="contact-file" name="fileUpload" class="form-control">
-            <small>{l s='Optional' d='Shop.Forms.Labels'} - {l s='Max size:' d='Shop.Forms.Labels'} {$contact.file_upload_size}MB</small>
-          </div>
-        {/if}
-        
-        <button type="submit" class="btn" name="submitMessage">
-          {l s='Send Message' d='Shop.Theme.Actions'}
-        </button>
-      </form>
-    </div>
-  </div>
-
-  {if $contact_infos.latitude && $contact_infos.longitude}
-    <div class="map-container">
-      <iframe
-        width="100%"
-        height="400"
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        src="https://maps.google.com/maps?q={$contact_infos.latitude},{$contact_infos.longitude}&z=15&output=embed"
-      ></iframe>
-    </div>
-  {/if}
-</main>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; {date('Y')} {$shop.name}. {l s='All rights reserved' d='Shop.Theme'}.</p>
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Form validation
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        const name = document.getElementById('contact-name').value.trim();
-        const email = document.getElementById('contact-email').value.trim();
-        const subject = document.getElementById('contact-subject').value;
-        const message = document.getElementById('contact-message').value.trim();
-        
-        if (!name || !email || !subject || !message) {
-          e.preventDefault();
-          alert('Please fill in all required fields');
-        }
-      });
-    }
-  });
-</script>
-
+    <script>
+        // Add form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add your form submission logic here
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
